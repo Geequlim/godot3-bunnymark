@@ -1,12 +1,12 @@
-class BunnymarkV1DrawTexture extends godot.Node2D {
+import bunny_texture from "res://images/godot_bunny.png";
+export default class BunnymarkV1DrawTexture extends godot.Node2D {
 	bunnies = [];
 	grav = 500;
-	bunny_texture = godot.ResourceLoader.load("res://images/godot_bunny.png");
 	screen_size = null;
 
 	_draw() {
 		for (const bunny of this.bunnies) {
-			this.draw_texture(this.bunny_texture, bunny[0]);
+			this.draw_texture(bunny_texture, bunny[0]);
 		}
 	}
 	

@@ -35,7 +35,7 @@ func _ready():
 	benchmark_container = get_node("BenchmarkContainer")
 
 	benchmark = "BunnymarkV2"
-	language = "gd"
+	language = "js"
 
 	var args = OS.get_cmdline_args()
 	for arg in args:
@@ -61,6 +61,7 @@ func _process(delta):
 func start_benchmark(benchmark_name, language):
 	printt("start benchmark", benchmark_name, language)
 	var language_extension = language
+	if language == "js": language_extension = "jsx"
 	if nativescript_languages.has(language) and nativescript_languages[language]:
 		language_extension = "gdns"
 	var script_path = "res://benchmarks/" + benchmark_name + "/" + language + "/" + benchmark_name + "." + language_extension

@@ -1,7 +1,8 @@
-class BunnymarkV1Sprites extends godot.Node2D {
+import bunny_texture from "res://images/godot_bunny.png";
+
+export default class BunnymarkV1Sprites extends godot.Node2D {
 	bunnies = [];
 	grav = 500;
-	bunny_texture = godot.ResourceLoader.load("res://images/godot_bunny.png");
 	screen_size = null;
 	bunnies_container = new godot.Node2D();
 	
@@ -50,7 +51,7 @@ class BunnymarkV1Sprites extends godot.Node2D {
 	
 	add_bunny() {
 		let bunny = new godot.Sprite();
-		bunny.set_texture(this.bunny_texture);
+		bunny.set_texture(bunny_texture);
 		this.bunnies_container.add_child(bunny);
 		bunny.position = new godot.Vector2(this.screen_size.x / 2, this.screen_size.y / 2);
 		this.bunnies.push({
